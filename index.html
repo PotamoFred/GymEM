@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  LANDING PAGE — ENTRENADOR PERSONAL PROFESIONAL
+  ============================================================================
+  Estructura del proyecto (modular, sin dependencias externas):
+    index.html            -> Marcado semántico + SEO + JSON-LD
+    assets/css/styles.css -> Design tokens + componentes (CSS3 puro)
+    assets/js/main.js     -> Módulos de interactividad (vanilla JS)
+    assets/img/           -> Imágenes (ver assets/img/README.md)
+    assets/media/         -> Vídeo de fondo opcional
+
+  Puntos de personalización marcados con el comentario  [EDITAR]
+  ============================================================================
+-->
+<html lang="es-CO">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ===================== SEO / [EDITAR] ===================== -->
+  <title>Edisson Manchola | Entrenador Personal Certificado en Ibagué</title>
+  <meta name="description"
+    content="Entrenador personal certificado en Ibagué, Tolima. Transforma tu cuerpo con ciencia y disciplina: pérdida de grasa, hipertrofia y asesoría nutricional. Agenda tu evaluación gratuita hoy.">
+  <meta name="author" content="Edisson Manchola">
+  <meta name="theme-color" content="#0A0A0C">
+  <link rel="canonical" href="https://www.tuentrenador.co/">
+
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CO">
+  <meta property="og:site_name" content="Edisson Manchola — Entrenamiento Personal">
+  <meta property="og:title" content="Transforma tu cuerpo con ciencia y disciplina">
+  <meta property="og:description"
+    content="Acompañamiento personalizado, planes basados en evidencia y seguimiento real. Agenda tu evaluación gratuita.">
+  <meta property="og:image" content="https://www.tuentrenador.co/assets/img/og-cover.jpg">
+  <meta property="og:url" content="https://www.tuentrenador.co/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon inline (evita una petición extra; cámbialo por assets/img/favicon.svg) -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0C'/%3E%3Cpath d='M8 24V8h3.4v5.6h9.2V8H24v16h-3.4v-5.8H11.4V24z' fill='%23E4FF3A'/%3E%3C/svg%3E">
+
+  <!-- ===================== Datos estructurados (Rich Snippets) ===================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://www.tuentrenador.co/#entrenador",
+        "name": "Edisson Manchola",
+        "jobTitle": "Entrenador Personal Certificado",
+        "description": "Entrenador personal con certificación NSCA-CPT y metodología basada en evidencia, especializada en recomposición corporal e hipertrofia.",
+        "image": "https://www.tuentrenador.co/assets/img/entrenador.jpg",
+        "url": "https://www.tuentrenador.co/",
+        "telephone": "+57-300-123-4567",
+        "email": "hola@tuentrenador.co",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ibagué",
+          "addressRegion": "Tolima",
+          "addressCountry": "CO"
+        },
+        "knowsAbout": ["Acondicionamiento físico", "Hipertrofia", "Asesoría nutricional", "Prevención de lesiones"]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Programas de entrenamiento",
+        "itemListElement": [
+          {
+            "@type": "Service",
+            "position": 1,
+            "name": "Acondicionamiento Físico",
+            "description": "Plan de 12 semanas para perder grasa y mejorar rendimiento.",
+            "offers": { "@type": "Offer", "price": "420000", "priceCurrency": "COP" }
+          },
+          {
+            "@type": "Service",
+            "position": 2,
+            "name": "Hipertrofia y Fuerza",
+            "description": "Periodización de fuerza y masa muscular con seguimiento quincenal.",
+            "offers": { "@type": "Offer", "price": "520000", "priceCurrency": "COP" }
+          },
+          {
+            "@type": "Service",
+            "position": 3,
+            "name": "Asesoría Nutricional",
+            "description": "Acompañamiento nutricional con ajuste semanal de macros.",
+            "offers": { "@type": "Offer", "price": "280000", "priceCurrency": "COP" }
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Necesito experiencia previa para entrenar contigo?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. El plan se adapta a tu punto de partida: la primera semana es de evaluación técnica y familiarización con los movimientos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Atiendes a personas que nunca han entrenado?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, cerca del 60% de mis clientes llega sin experiencia previa. El programa empieza con progresión gradual y educación técnica."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿La sesión puede ser online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. El coaching online incluye videollamada semanal, con revisión de técnica en video y ajustes diarios por WhatsApp."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo se paga y qué incluye?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Se paga por adelantado cada mes por Nequi, PSE o transferencia. Incluye planificación, sesiones, seguimiento y acceso al grupo de soporte."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===================== Hoja de estilos ===================== -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Marca de que hay JS: habilita las animaciones de entrada.
+       Si este script no se ejecuta, el contenido se muestra igualmente. -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+
+  <!-- Accesibilidad: salto al contenido -->
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+  <!-- ======================================================================
+       Sprite de iconos SVG (inline = 0 peticiones de red adicionales)
+       Uso: <svg class="icon"><use href="#i-dumbbell"></use></svg>
+       ====================================================================== -->
+  <svg class="svg-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="i-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9v6M6 6.5v11M18 6.5v11M21 9v6M6 12h12" />
+      </symbol>
+
+      <symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2.5c3.5 3 4 5.2 3 7.3 1.6-.6 2.5-2 2.7-3.4 1.6 1.7 3.3 4 3.3 7A9 9 0 0 1 3 13.4c0-4.2 3-6.2 4.4-8.2.5 1.4 1.3 2.4 2.4 3-1-3 .3-4.7 2.2-5.7Z" />
+      </symbol>
+
+      <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 20c0-8 5-13 16-14 0 11-5 16-13 16H4Z" />
+        <path d="M4.5 19.5C9 16 12.5 13 17 10.5" />
+      </symbol>
+
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3l7.5 3v5.5c0 4.6-3.1 8.3-7.5 9.5-4.4-1.2-7.5-4.9-7.5-9.5V6L12 3Z" />
+        <path d="M9 12.2l2.1 2.1L15.4 10" />
+      </symbol>
+
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.5 12.5l5 5 10-11" />
+      </symbol>
+
+      <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 2.6l2.9 5.9 6.5.9-4.7 4.6 1.1 6.5-5.8-3-5.8 3 1.1-6.5L2.6 9.4l6.5-.9L12 2.6Z" />
+      </symbol>
+
+      <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="16" rx="3" />
+        <path d="M3 10h18M8 3v4M16 3v4" />
+      </symbol>
+
+      <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h13M12.5 5.5L19 12l-6.5 6.5" />
+      </symbol>
+
+      <symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.5 5.5L8 12l6.5 6.5" />
+      </symbol>
+
+      <symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9.5 5.5L16 12l-6.5 6.5" />
+      </symbol>
+
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </symbol>
+
+      <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round">
+        <path d="M6 6l12 12M18 6L6 18" />
+      </symbol>
+
+      <symbol id="i-quote" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M9.4 5.2C6 6.6 4 9.4 4 12.8c0 3.5 2 5.9 4.8 5.9 2.3 0 4-1.7 4-3.9 0-2.1-1.5-3.7-3.5-3.7-.4 0-.8.1-1 .2.4-1.7 1.9-3.2 3.7-4.1l-2.6-2Zm10 0c-3.4 1.4-5.4 4.2-5.4 7.6 0 3.5 2 5.9 4.8 5.9 2.3 0 4-1.7 4-3.9 0-2.1-1.5-3.7-3.5-3.7-.4 0-.8.1-1 .2.4-1.7 1.9-3.2 3.7-4.1l-2.6-2Z" />
+      </symbol>
+
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="5" width="18" height="14" rx="3" />
+        <path d="M4 7.5l8 5.5 8-5.5" />
+      </symbol>
+
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6.5 3.5h3l1.5 4-2 1.5a11 11 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5Z" />
+      </symbol>
+
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" />
+        <circle cx="12" cy="10" r="2.6" />
+      </symbol>
+
+      <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M12 2a9.9 9.9 0 0 0-8.5 15l-1.4 5.1 5.2-1.4A9.9 9.9 0 1 0 12 2Zm0 1.8a8.1 8.1 0 1 1-4.3 15l-.3-.2-3.1.8.8-3-.2-.3A8.1 8.1 0 0 1 12 3.8Zm-3.6 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.8 4.3 3.8 2.2.9 2.5.7 3 .7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3-1.7-.8c-.2-.1-.4-.1-.6.1l-.7.9c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.1-.2 0-.4.1-.5l.4-.5.3-.5v-.5l-.8-1.9c-.2-.4-.4-.4-.6-.4h-.5Z" />
+      </symbol>
+
+      <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17" cy="7" r="1.1" fill="currentColor" stroke="none" />
+      </symbol>
+
+      <symbol id="i-youtube" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12c0 1.6.1 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.3-1.6.4-3.2.4-4.8s-.1-3.2-.4-4.8ZM10 15V9l5.2 3-5.2 3Z" />
+      </symbol>
+
+      <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.8c0-.9.3-1.6 1.6-1.6h1.6V3.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.6H7.8V13h2.7v8h3Z" />
+      </symbol>
+
+      <symbol id="i-tiktok" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M16.5 3h-2.7v11.3a2.4 2.4 0 1 1-1.9-2.4v-2.8a5.1 5.1 0 1 0 4.6 5.1V8.8a6.6 6.6 0 0 0 3.7 1.1V7.2a3.9 3.9 0 0 1-3.7-4.2Z" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ======================================================================
+       HEADER — navegación sticky
+       ====================================================================== -->
+  <header class="header" id="inicio" data-header>
+    <div class="container header__inner">
+
+      <!-- Marca / Logo [EDITAR] -->
+      <a class="brand" href="#inicio">
+        <span class="brand__mark" aria-hidden="true">
+          <svg class="icon"><use href="#i-dumbbell"></use></svg>
+        </span>
+        <span class="brand__text">
+          <strong>EDISSON MANCHOLA</strong>
+          <small>Entrenador personal · Ibagué</small>
+        </span>
+      </a>
+
+      <!-- Enlaces de navegación -->
+      <nav class="nav" id="nav-principal" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#inicio">Inicio</a></li>
+          <li><a class="nav__link" href="#sobre-mi">Sobre Mí</a></li>
+          <li><a class="nav__link" href="#programas">Programas</a></li>
+          <li><a class="nav__link" href="#testimonios">Testimonios</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm nav__cta" href="#contacto">
+          Agenda tu evaluación
+        </a>
+      </nav>
+
+      <!-- Botón menú móvil -->
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav-principal"
+        aria-label="Abrir menú de navegación" data-burger>
+        <svg class="icon burger__open"><use href="#i-menu"></use></svg>
+        <svg class="icon burger__close"><use href="#i-close"></use></svg>
+      </button>
+
+    </div>
+    <div class="header__progress" data-scroll-progress aria-hidden="true"></div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ====================================================================
+         1. HERO — fondo oscuro + imagen/overlay + CTA
+         ==================================================================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- Capa visual de fondo -->
+      <div class="hero__media" data-hero-media aria-hidden="true">
+        <img class="hero__image" src="assets/img/hero.jpg" alt="" width="1600" height="1000"
+          fetchpriority="high" decoding="async">
+        <div class="hero__scrim"></div>
+        <div class="hero__grid"></div>
+        <div class="hero__glow"></div>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+
+          <p class="badge reveal" data-reveal="up">
+            <span class="badge__dot" aria-hidden="true"></span>
+            Certificación NSCA-CPT · 850+ clientes formados
+          </p>
+
+          <h1 class="hero__title reveal" data-reveal="up" data-reveal-delay="80" id="hero-title">
+            Transforma tu cuerpo con
+            <em>ciencia y disciplina</em>
+          </h1>
+
+          <p class="hero__text reveal" data-reveal="up" data-reveal-delay="160">
+            No credo en milagros: creo en planes que se construyen con datos, técnica correcta
+            y seguimiento real. Entrena con propósito, alcanza tu mejor versión y sustainable en el tiempo.
+          </p>
+
+          <div class="hero__actions reveal" data-reveal="up" data-reveal-delay="240">
+            <a class="btn btn--primary btn--lg" href="#contacto" data-track="cta_hero">
+              Agenda tu evaluación gratuita
+              <svg class="icon btn__icon"><use href="#i-arrow"></use></svg>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#programas" data-track="cta_hero_secondary">
+              Ver programas
+            </a>
+          </div>
+
+          <!-- Prueba social inmediata (subida de conversión) -->
+          <div class="hero__proof reveal" data-reveal="up" data-reveal-delay="320">
+            <div class="avatars" aria-hidden="true">
+              <span class="avatar" style="--c1:#E4FF3A;--c2:#FF5C1A">LM</span>
+              <span class="avatar" style="--c1:#2DE2E6;--c2:#3B82F6">CR</span>
+              <span class="avatar" style="--c1:#FF5C1A;--c2:#E4FF3A">JP</span>
+              <span class="avatar avatar--more">+850</span>
+            </div>
+            <div class="hero__proof-txt">
+              <div class="stars" role="img" aria-label="4.9 de 5 estrellas">
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <b>4.9/5</b>
+              </div>
+              <p>+120 reseñas verificadas en Google</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Indicador de scroll -->
+      <a class="hero__scroll" href="#metricas" aria-label="Bajar a la sección de resultados">
+        <span class="hero__scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ====================================================================
+         1.1 MÉTRICAS — franja de confianza (contadores animados)
+         ==================================================================== -->
+    <section class="metrics" id="metricas" aria-label="Resultados en cifras">
+      <div class="container metrics__grid">
+        <div class="metric reveal" data-reveal="up">
+          <p class="metric__num"><span data-count="12" data-suffix="">0</span></p>
+          <p class="metric__label">Años de experiencia</p>
+        </div>
+        <div class="metric reveal" data-reveal="up" data-reveal-delay="80">
+          <p class="metric__num"><span data-count="850" data-suffix="+">0</span></p>
+          <p class="metric__label">Clientes formados</p>
+        </div>
+        <div class="metric reveal" data-reveal="up" data-reveal-delay="160">
+          <p class="metric__num"><span data-count="18" data-prefix="−" data-suffix=" kg">0</span></p>
+          <p class="metric__label">Pérdida promedio en 6 meses</p>
+        </div>
+        <div class="metric reveal" data-reveal="up" data-reveal-delay="240">
+          <p class="metric__num"><span data-count="94" data-suffix="%">0</span></p>
+          <p class="metric__label">Renovación tras 6 meses</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         2. AUTORIDAD — Sobre mí
+         ==================================================================== -->
+    <section class="section about" id="sobre-mi" aria-labelledby="about-title">
+      <div class="container about__grid">
+
+        <!-- Columna visual -->
+        <div class="about__media reveal" data-reveal="left">
+          <div class="about__photo">
+            <span class="about__initials" aria-hidden="true">EM</span>
+            <img src="assets/img/entrenador.jpg" alt="Edisson Manchola, entrenador personal certificado"
+              width="900" height="1100" loading="lazy" decoding="async" data-img-fallback>
+            <span class="about__ring" aria-hidden="true"></span>
+          </div>
+
+          <div class="chip chip--float chip--tl">
+            <svg class="icon"><use href="#i-shield"></use></svg>
+            <div>
+              <strong>12 años</strong>
+              <small>certificado y activo</small>
+            </div>
+          </div>
+
+          <div class="chip chip--float chip--br">
+            <svg class="icon"><use href="#i-flame"></use></svg>
+            <div>
+              <strong>−18 kg</strong>
+              <small>promedio en 6 meses</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna de contenido -->
+        <div class="about__body">
+          <p class="eyebrow reveal" data-reveal="up"><span>Sobre mí</span></p>
+          <h2 class="section__title reveal" data-reveal="up" data-reveal-delay="60" id="about-title">
+            Un entrenador que te enseña a <em>entrenar bien</em>, no solo a entrenar
+          </h2>
+          <p class="section__sub reveal" data-reveal="up" data-reveal-delay="120">
+            Soy Edisson Manchola, entrenador personal certificado por la NSCA y especialista en
+            recomposición corporal. Mi trabajo es simple: medir, planificar y acompañarte hasta
+            que el hábito —no la motivación— haga el resto.
+          </p>
+
+          <!-- Metodología: 3 pilares -->
+          <ul class="pillars">
+            <li class="pillar reveal" data-reveal="up" data-reveal-delay="160">
+              <span class="pillar__icon"><svg class="icon"><use href="#i-dumbbell"></use></svg></span>
+              <div>
+                <h3>Evaluación real, no improvisación</h3>
+                <p>Pruebas de fuerza, movilidad, composición corporal y entrevista clínica. Tu plan
+                  empieza con datos, no con suposiciones.</p>
+              </div>
+            </li>
+            <li class="pillar reveal" data-reveal="up" data-reveal-delay="220">
+              <span class="pillar__icon"><svg class="icon"><use href="#i-flame"></use></svg></span>
+              <div>
+                <h3>Periodización con progresión</h3>
+                <p>Bloques de 4 a 12 semanas con carga, volumen y recuperación calculados. Súbele o
+                  bájale a tu rendimiento, cada semana.</p>
+              </div>
+            </li>
+            <li class="pillar reveal" data-reveal="up" data-reveal-delay="280">
+              <span class="pillar__icon"><svg class="icon"><use href="#i-leaf"></use></svg></span>
+              <div>
+                <h3>Acompañamiento sin excusas</h3>
+                <p>Check-in semanal, ajustes por WhatsApp y soporte entre sesiones. La adherencia es
+                  la variable que más cambia resultados.</p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Credenciales -->
+          <ul class="certs reveal" data-reveal="up" data-reveal-delay="340" aria-label="Certificaciones">
+            <li>NSCA-CPT</li>
+            <li>ACE-CPT</li>
+            <li>Nutrición Clínica</li>
+            <li>Prevención de lesiones</li>
+            <li>CrossFit L2</li>
+          </ul>
+
+          <div class="about__actions reveal" data-reveal="up" data-reveal-delay="400">
+            <a class="btn btn--primary" href="#contacto" data-track="cta_about">
+              Quiero empezar <svg class="icon btn__icon"><use href="#i-arrow"></use></svg>
+            </a>
+            <a class="btn btn--text" href="#testimonios">Ver resultados de clientes</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. PROGRAMAS — tarjetas de servicios
+         ==================================================================== -->
+    <section class="section section--alt programs" id="programas" aria-labelledby="programs-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal" data-reveal="up"><span>Programas</span></p>
+          <h2 class="section__title section__title--center reveal" data-reveal="up" data-reveal-delay="60"
+            id="programs-title">
+            Elige tu objetivo. Yo me encargo del <em>cómo</em>.
+          </h2>
+          <p class="section__sub section__sub--center reveal" data-reveal="up" data-reveal-delay="120">
+            Programas con duración, alcance y precio cerrados desde el primer día. Sin listas
+            escondidas ni sorpresas a mitad de mes.
+          </p>
+        </header>
+
+        <div class="cards">
+
+          <!-- Tarjeta 1 -->
+          <article class="card reveal" data-reveal="up" data-tilt>
+            <div class="card__top">
+              <span class="card__icon" style="--icon-1:#2DE2E6;--icon-2:#3B82F6">
+                <svg class="icon"><use href="#i-flame"></use></svg>
+              </span>
+              <span class="card__tag">Más solicitado</span>
+            </div>
+            <h3 class="card__title">Acondicionamiento Físico</h3>
+            <p class="card__desc">
+              Para perder grasa, mejorar capacidad aeróbica y energía diaria. Plan de 12 semanas
+              con 3 sesiones semanales y trabajo de fuerza progresivo.
+            </p>
+            <ul class="card__list">
+              <li><svg class="icon"><use href="#i-check"></use></svg> Plan de 12 semanas personalizado</li>
+              <li><svg class="icon"><use href="#i-check"></use></svg> 3 sesiones semanales (gimnasio o casa)</li>
+              <li><svg class="icon"><use href="#i-check"></use></svg> Guía nutricional para déficit calórico</li>
+              <li><svg class="icon"><use href="#i-check"></use></svg> Evaluación inicial + 3 reevaluaciones</li>
+            </ul>
+            <div class="card__foot">
+              <p class="card__price"><small>Desde</small><span>$420.000</span><em>COP / mes</em></p>
+              <a class="btn btn--outline" href="#contacto" data-track="plan_acondicionamiento">
+                Quiero este plan
+              </a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2 — destacada -->
+          <article class="card card--featured reveal" data-reveal="up" data-reveal-delay="90" data-tilt>
+            <span class="card__ribbon">El más elegido</span>
+            <div class="card__top">
+              <span class="card__icon" style="--icon-1:#E4FF3A;--icon-2:#FF5C1A">
+                <svg class="icon"><use href="#i-dumbbell"></use></svg>
+              </span>
+              <span class="card__tag card__tag--accent">Hipertrofia</span>
+            </div>
+            <h3 class="card__title">Hipertrofia y Fuerza</h3>
+            <p class="card__desc">
+              Periodización de fuerza y masa muscular con cargas progresivas, técnica depurada y
+              control de la recuperación. El programa para postear.
+            </p>
+            <ul class="card__list">
+              <li><svg class="icon"><use href="#i-check"></use></svg> 4 sesiones semanales por bloques</li>
+              <li><svg class="icon"><use href="#i-check"></use></svg> Programación de fuerza 3–6 repeticiones</li>
+              <li><svg class="icon"><use href="#i-check"></use></svg> Seguimiento quincenal de medidas y fotos</li>
+              <li><svg class="icon"><use href="#i-check"></use></svg> Protocolo de prevención de lesiones</li>
+            </ul>
+            <div class="card__foot">
+              <p class="card__price"><small>Desde</small><span>$520.000</span><em>COP / mes</em></p>
+              <a class="btn btn--primary" href="#contacto" data-track="plan_hipertrofia">
+                Quiero este plan
+              </a>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3 -->
+          <article class="card reveal" data-reveal="up" data-reveal-delay="180" data-tilt>
+            <div class="card__top">
+              <span class="card__icon" style="--icon-1:#FF5C1A;--icon-2:#E4FF3A">
+                <svg class="icon"><use href="#i-leaf"></use></svg>
+              </span>
+              <span class="card__tag">Complementario</span>
+            </div>
+            <h3 class="card__title">Asesoría Nutricional</h3>
+            <p class="card__desc">
+              Eating limpio sin extremos: comidas prácticas, macros por objetivo y ajustes
+              semanales según cómo responde tu cuerpo.
+            </p>
+            <ul class="card__list">
+              <li><svg class="icon"><use href="#i-check"></use></svg> Cálculo de calorías y macros</li>
+              <li><svg class="icon"><use href="#i-check"></use></svg> Plan de comidas de 7 días</li>
+              <li><svg class="icon"><use href="#i-check"></use></svg> Ajuste semanal según peso y energía</li>
+              <li><svg class="icon"><use href="#i-check"></use></svg> Estrategias para comer fuera de casa</li>
+            </ul>
+            <div class="card__foot">
+              <p class="card__price"><small>Desde</small><span>$280.000</span><em>COP / mes</em></p>
+              <a class="btn btn--outline" href="#contacto" data-track="plan_nutricion">
+                Quiero este plan
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Franja de garantía -->
+        <div class="guarantee reveal" data-reveal="up">
+          <svg class="icon guarantee__icon"><use href="#i-shield"></use></svg>
+          <p><strong>Mes de prueba:</strong> si en los primeros 30 días no notas cambios medibles,
+            te devolvemos el 100% de lo pagado. Sin letra pequeña.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. PROCESO — cómo empezar
+         ==================================================================== -->
+    <section class="section process" id="proceso" aria-labelledby="process-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal" data-reveal="up"><span>Cómo funciona</span></p>
+          <h2 class="section__title section__title--center reveal" data-reveal="up" data-reveal-delay="60"
+            id="process-title">Empezar toma <em>3 pasos</em>, no 3 meses</h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal" data-reveal="up">
+            <span class="step__num">01</span>
+            <span class="step__icon"><svg class="icon"><use href="#i-calendar"></use></svg></span>
+            <h3>Agenda tu evaluación</h3>
+            <p>20 minutos por videollamada o en el gimnasio. Sin costo y sin compromiso.</p>
+          </li>
+          <li class="step reveal" data-reveal="up" data-reveal-delay="90">
+            <span class="step__num">02</span>
+            <span class="step__icon"><svg class="icon"><use href="#i-flame"></use></svg></span>
+            <h3>Recibe tu plan</h3>
+            <p>En menos de 48 horas tienes la programación, la guía nutricional y el acceso al grupo.</p>
+          </li>
+          <li class="step reveal" data-reveal="up" data-reveal-delay="180">
+            <span class="step__num">03</span>
+            <span class="step__icon"><svg class="icon"><use href="#i-check"></use></svg></span>
+            <h3>Entrena y mide</h3>
+            <p>Check-in semanal, ajustes mensuales y resultados que se pueden ver en fotos y medidas.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. PRUEBA SOCIAL — testimonios (grid en escritorio / carrusel en móvil)
+         ==================================================================== -->
+    <section class="section section--alt testimonials" id="testimonios" aria-labelledby="testimonials-title">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow reveal" data-reveal="up"><span>Testimonios</span></p>
+          <h2 class="section__title section__title--center reveal" data-reveal="up" data-reveal-delay="60"
+            id="testimonials-title">Resultados que se <em>miden en kilos y fuerza</em></h2>
+          <p class="section__sub section__sub--center reveal" data-reveal="up" data-reveal-delay="120">
+            Historias reales de clientes que transformaron su cuerpo con el mismo método que tú
+            vas a usar.
+          </p>
+        </header>
+
+        <!-- Carrusel responsivo: 1 tarjeta en móvil, 3 en escritorio.
+             El <ul> conserva su semántica de lista (los <li> son los slides). -->
+        <div class="carousel" data-carousel role="region" aria-roledescription="carrusel"
+          aria-label="Testimonios de clientes">
+          <ul class="carousel__track" data-carousel-track>
+
+            <li class="tcard reveal" data-reveal="up">
+              <svg class="icon tcard__quote"><use href="#i-quote"></use></svg>
+              <div class="stars stars--sm" role="img" aria-label="5 de 5 estrellas">
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+              </div>
+              <blockquote>
+                <p>“Entraba a la academia sin saber un solo movimiento. En 6 meses pesé 14 kg menos
+                  y por primera vez hago abdominales sin que duela la espalda.”</p>
+              </blockquote>
+              <div class="tcard__result">
+                <svg class="icon"><use href="#i-flame"></use></svg>
+                <span><strong>−14 kg</strong> · 32% menos grasa</span>
+              </div>
+              <footer class="tcard__author">
+                <span class="avatar" style="--c1:#E4FF3A;--c2:#FF5C1A">LM</span>
+                <div>
+                  <strong>Laura Mejía</strong>
+                  <small>Diseñadora, 34 años · Acondicionamiento</small>
+                </div>
+              </footer>
+            </li>
+
+            <li class="tcard reveal" data-reveal="up" data-reveal-delay="90">
+              <svg class="icon tcard__quote"><use href="#i-quote"></use></svg>
+              <div class="stars stars--sm" role="img" aria-label="5 de 5 estrellas">
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+              </div>
+              <blockquote>
+                <p>“Lo que más cambió fue mi mente: entender <em>por qué</em> hago cada ejercicio.
+                  Subí 7 kg de masa muscular sin una sola lesión.”</p>
+              </blockquote>
+              <div class="tcard__result">
+                <svg class="icon"><use href="#i-dumbbell"></use></svg>
+                <span><strong>+7 kg</strong> de masa muscular</span>
+              </div>
+              <footer class="tcard__author">
+                <span class="avatar" style="--c1:#2DE2E6;--c2:#3B82F6">CR</span>
+                <div>
+                  <strong>Carlos Ramírez</strong>
+                  <small>Ingeniero, 29 años · Hipertrofia</small>
+                </div>
+              </footer>
+            </li>
+
+            <li class="tcard reveal" data-reveal="up" data-reveal-delay="180">
+              <svg class="icon tcard__quote"><use href="#i-quote"></use></svg>
+              <div class="stars stars--sm" role="img" aria-label="5 de 5 estrellas">
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+                <svg class="icon"><use href="#i-star"></use></svg>
+              </div>
+              <blockquote>
+                <p>“Después de los 45 quería recuperar la espalda que me lastimó. Todo fue
+                  evaluación, técnica y constancia. Hoy entreno sin dolor.”</p>
+              </blockquote>
+              <div class="tcard__result">
+                <svg class="icon"><use href="#i-shield"></use></svg>
+                <span><strong>0 lesiones</strong> en 10 meses</span>
+              </div>
+              <footer class="tcard__author">
+                <span class="avatar" style="--c1:#FF5C1A;--c2:#E4FF3A">JP</span>
+                <div>
+                  <strong>Jhon Ospina</strong>
+                  <small>Abogado, 48 años · Salud articular</small>
+                </div>
+              </footer>
+            </li>
+
+          </ul>
+
+          <!-- Controles: solo visibles cuando el carrusel es desplazable -->
+          <div class="carousel__nav" data-carousel-nav hidden>
+            <button class="carousel__btn" type="button" data-carousel-prev aria-label="Testimonio anterior">
+              <svg class="icon"><use href="#i-chevron-left"></use></svg>
+            </button>
+            <div class="carousel__dots" data-carousel-dots role="group" aria-label="Ir a un testimonio"></div>
+            <button class="carousel__btn" type="button" data-carousel-next aria-label="Siguiente testimonio">
+              <svg class="icon"><use href="#i-chevron-right"></use></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. FAQ — resuelve objeciones
+         ==================================================================== -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <header class="section__head">
+          <p class="eyebrow reveal" data-reveal="up"><span>Preguntas frecuentes</span></p>
+          <h2 class="section__title section__title--center reveal" data-reveal="up" data-reveal-delay="60"
+            id="faq-title">Todo lo que suelen <em>preguntarme</em> antes de empezar</h2>
+        </header>
+
+        <div class="faq__list" data-accordion>
+          <details class="faq__item reveal" data-reveal="up" data-reveal-delay="60">
+            <summary>
+              <span>¿Necesito experiencia previa para entrenar contigo?</span>
+              <span class="faq__marker" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__answer">
+              <p>No. El plan se adapta a tu punto de partida: la primera semana es de evaluación
+                técnica y familiarización con los movimientos. Yo te enseño la técnica, no te
+                limito a lo que ya sabes.</p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal" data-reveal="up" data-reveal-delay="120">
+            <summary>
+              <span>¿La sesión puede ser online?</span>
+              <span class="faq__marker" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__answer">
+              <p>Sí. El coaching online incluye videollamada semanal, revisión de técnica en video
+                y ajustes diarios por WhatsApp. El 40% de mis clientes entrena de esta forma.</p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal" data-reveal="up" data-reveal-delay="180">
+            <summary>
+              <span>¿Cómo se paga y qué incluye?</span>
+              <span class="faq__marker" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__answer">
+              <p>Se paga por adelantado cada mes vía Nequi, PSE o transferencia. Incluye
+                planificación, sesiones, seguimiento, ajustes y acceso al grupo de soporte durante
+                todo el mes.</p>
+            </div>
+          </details>
+
+          <details class="faq__item reveal" data-reveal="up" data-reveal-delay="240">
+            <summary>
+              <span>¿Y si tengo lesiones o condiciones médicas?</span>
+              <span class="faq__marker" aria-hidden="true"></span>
+            </summary>
+            <div class="faq__answer">
+              <p>Trabajamos con este programa con control de carga y en coordinación con tu
+                fisioterapeuta o médico cuando es necesario. En la evaluación reviso tu historia
+                clínica y adaptamos el programa a tu diagnóstico.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. CONTACTO — formulario de captación
+         ==================================================================== -->
+    <section class="section section--alt contact" id="contacto" aria-labelledby="contact-title">
+      <div class="container contact__grid">
+
+        <!-- Columna informativa -->
+        <div class="contact__info">
+          <p class="eyebrow reveal" data-reveal="up"><span>Agenda tu evaluación</span></p>
+          <h2 class="section__title reveal" data-reveal="up" data-reveal-delay="60" id="contact-title">
+            Tu primer paso toma <em>20 minutos</em>
+          </h2>
+          <p class="section__sub reveal" data-reveal="up" data-reveal-delay="120">
+            Completa el formulario y te contacto en menos de 24 horas hábiles para agendar tu
+            evaluación gratuita. Sin compromiso, sin venta agresiva.
+          </p>
+
+          <ul class="contact__list">
+            <li class="reveal" data-reveal="up" data-reveal-delay="160">
+              <span class="contact__icon"><svg class="icon"><use href="#i-whatsapp"></use></svg></span>
+              <div>
+                <small>WhatsApp</small>
+                <a href="https://wa.me/573001234567" data-track="contacto_whatsapp" target="_blank"
+                  rel="noopener">+57 300 123 4567</a>
+              </div>
+            </li>
+            <li class="reveal" data-reveal="up" data-reveal-delay="200">
+              <span class="contact__icon"><svg class="icon"><use href="#i-mail"></use></svg></span>
+              <div>
+                <small>Correo</small>
+                <a href="mailto:hola@tuentrenador.co" data-track="contacto_email">hola@tuentrenador.co</a>
+              </div>
+            </li>
+            <li class="reveal" data-reveal="up" data-reveal-delay="240">
+              <span class="contact__icon"><svg class="icon"><use href="#i-pin"></use></svg></span>
+              <div>
+                <small>Estudio</small>
+                <span>Ibagué, Tolima — y online</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="contact__hours reveal" data-reveal="up" data-reveal-delay="280">
+            <svg class="icon"><use href="#i-calendar"></use></svg>
+            <p><strong>Lun–Vie 6:00 a.m. – 8:00 p.m.</strong> · Sáb 8:00 a.m. – 12:00 m.</p>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="contact__form-wrap reveal" data-reveal="right">
+          <form class="form" data-form novalidate>
+            <h3 class="form__title">Solicita tu evaluación gratuita</h3>
+
+            <!-- Honeypot anti-spam: invisible para humanos, visible para bots -->
+            <div class="hp" aria-hidden="true">
+              <label>No completes este campo<input type="text" name="sitio_web" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <div class="field">
+              <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="nombre" name="nombre" placeholder="Ej. Ana Rodríguez"
+                autocomplete="name" required aria-describedby="err-nombre">
+              <p class="field__error" id="err-nombre" data-error-for="nombre" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Correo electrónico <span aria-hidden="true">*</span></label>
+              <input class="input" type="email" id="email" name="email" placeholder="tu@correo.com"
+                autocomplete="email" required aria-describedby="err-email">
+              <p class="field__error" id="err-email" data-error-for="email" role="alert"></p>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="whatsapp">WhatsApp <small>(opcional)</small></label>
+                <input class="input" type="tel" id="whatsapp" name="whatsapp" placeholder="+57 300 000 0000"
+                  autocomplete="tel" inputmode="tel">
+              </div>
+              <div class="field">
+                <label for="programa">Programa de interés</label>
+                <select class="input" id="programa" name="programa">
+                  <option value="">Selecciona…</option>
+                  <option>Acondicionamiento Físico</option>
+                  <option>Hipertrofia y Fuerza</option>
+                  <option>Asesoría Nutricional</option>
+                  <option>Online / a distancia</option>
+                  <option>No sé aún, necesito orientación</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="objetivo">Objetivo principal <span aria-hidden="true">*</span></label>
+              <select class="input" id="objetivo" name="objetivo" required aria-describedby="err-objetivo">
+                <option value="">Selecciona tu objetivo…</option>
+                <option value="perdida-grasa">Perder grasa</option>
+                <option value="musculo">Ganar masa muscular</option>
+                <option value="salud">Mejorar salud y energía</option>
+                <option value="rendimiento">Mejorar rendimiento deportivo</option>
+                <option value="salud-articular">Rehabilitación / salud articular</option>
+                <option value="otro">Otro</option>
+              </select>
+              <p class="field__error" id="err-objetivo" data-error-for="objetivo" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Cuéntame un poco más <small>(opcional)</small></label>
+              <textarea class="input" id="mensaje" name="mensaje" rows="3"
+                placeholder="Edad, experiencia previa, lesions, horario disponible…"></textarea>
+            </div>
+
+            <button class="btn btn--primary btn--block btn--lg" type="submit" data-submit>
+              <span class="btn__label">Agendar mi evaluación</span>
+              <svg class="icon btn__icon"><use href="#i-arrow"></use></svg>
+              <span class="btn__spinner" aria-hidden="true"></span>
+            </button>
+
+            <p class="form__legal">
+              Al enviar aceptas que te contactemos por WhatsApp o correo. Tus datos no se
+              comparten con terceros.
+            </p>
+
+            <!-- Mensaje de estado accesible -->
+            <p class="form__status" data-form-status role="status" aria-live="polite" hidden></p>
+          </form>
+
+          <!-- Panel de éxito (reemplaza al formulario) -->
+          <div class="success" data-success hidden>
+            <span class="success__icon"><svg class="icon"><use href="#i-check"></use></svg></span>
+            <h3>¡Solicitud recibida!</h3>
+            <p>Gracias por dar el paso. Te contacto en menos de <strong>24 horas hábiles</strong> para
+              confirmar tu evaluación gratuita.</p>
+            <p class="success__note">¿Prefieres escribirme ya?
+              <a href="https://wa.me/573001234567" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>.
+            </p>
+            <button class="btn btn--ghost" type="button" data-reset>Enviar otra solicitud</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+
+      <div class="footer__brand">
+        <a class="brand" href="#inicio">
+          <span class="brand__mark" aria-hidden="true">
+            <svg class="icon"><use href="#i-dumbbell"></use></svg>
+          </span>
+          <span class="brand__text">
+            <strong>EDISSON MANCHOLA</strong>
+            <small>Entrenador personal · Ibagué</small>
+          </span>
+        </a>
+        <p>Entrenamiento personalizado basado en evidencia, seguimiento real y hábitos que se
+          sostienen en el tiempo. Tu cuerpo es un proyecto de largo plazo.</p>
+        <ul class="social" aria-label="Redes sociales">
+          <li><a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"
+              data-track="social_instagram"><svg class="icon"><use href="#i-instagram"></use></svg></a></li>
+          <li><a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"
+              data-track="social_youtube"><svg class="icon"><use href="#i-youtube"></use></svg></a></li>
+          <li><a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"
+              data-track="social_facebook"><svg class="icon"><use href="#i-facebook"></use></svg></a></li>
+          <li><a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"
+              data-track="social_tiktok"><svg class="icon"><use href="#i-tiktok"></use></svg></a></li>
+        </ul>
+      </div>
+
+      <nav class="footer__col" aria-label="Navegación del pie de página">
+        <h3>Navegación</h3>
+        <ul>
+          <li><a href="#sobre-mi">Sobre Mí</a></li>
+          <li><a href="#programas">Programas</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__col">
+        <h3>Programas</h3>
+        <ul>
+          <li><a href="#contacto" data-plan="Acondicionamiento Físico">Acondicionamiento Físico</a></li>
+          <li><a href="#contacto" data-plan="Hipertrofia y Fuerza">Hipertrofia y Fuerza</a></li>
+          <li><a href="#contacto" data-plan="Asesoría Nutricional">Asesoría Nutricional</a></li>
+          <li><a href="#contacto" data-plan="Online / a distancia">Coaching online</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h3>Contacto directo</h3>
+        <ul class="footer__contact">
+          <li>
+            <svg class="icon"><use href="#i-whatsapp"></use></svg>
+            <a href="https://wa.me/573001234567" target="_blank" rel="noopener">+57 300 123 4567</a>
+          </li>
+          <li>
+            <svg class="icon"><use href="#i-mail"></use></svg>
+            <a href="mailto:hola@tuentrenador.co">hola@tuentrenador.co</a>
+          </li>
+          <li>
+            <svg class="icon"><use href="#i-pin"></use></svg>
+            <span>Ibagué, Tolima, Colombia</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span data-year>2026</span> Edisson Manchola. Todos los derechos reservados.</p>
+      <p class="footer__legal">
+        <a href="#">Política de privacidad</a> · <a href="#">Términos</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       BARRA FIJA MÓVIL — CTA de conversión persistente
+       ====================================================================== -->
+  <div class="dock" data-dock>
+    <a class="dock__btn dock__btn--wa" href="https://wa.me/573001234567" target="_blank" rel="noopener"
+      aria-label="Escribir por WhatsApp" data-track="dock_whatsapp">
+      <svg class="icon"><use href="#i-whatsapp"></use></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a class="dock__btn dock__btn--cta" href="#contacto" data-track="dock_cta">
+      Agenda tu evaluación
+    </a>
+  </div>
+
+  <!-- Scripts (defer = no bloquea el renderizado) -->
+  <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

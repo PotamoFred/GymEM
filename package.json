@@ -1,0 +1,27 @@
+{
+  "name": "landing-entrenador-personal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page de alta conversión para entrenador personal profesional. HTML5 + CSS3 + JavaScript sin dependencias.",
+  "keywords": [
+    "landing-page",
+    "entrenador-personal",
+    "fitness",
+    "html5",
+    "css3",
+    "vanilla-js"
+  ],
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "npx --yes serve . -l 5173",
+    "dev": "npx --yes serve . -l 5173",
+    "lint:html": "npx --yes html-validate index.html",
+    "lint:css": "npx --yes stylelint \"assets/css/*.css\"",
+    "lint:js": "npx --yes eslint assets/js/main.js"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

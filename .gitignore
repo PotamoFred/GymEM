@@ -1,0 +1,29 @@
+# Dependencias y artefactos
+node_modules/
+.pnp
+.pnp.js
+
+# Salidas de build
+dist/
+build/
+.output/
+.vercel/
+.netlify/
+
+# Entorno
+.env
+.env.local
+.env.*.local
+
+# Sistema operativo / editores
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+.vscode/
+.idea/
+
+# Cachés
+.cache/
+.parcel-cache/
+*.tsbuildinfo
