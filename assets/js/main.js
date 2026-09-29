@@ -401,18 +401,15 @@ function initHeroMedia() {
   const media = $('[data-hero-media]');
   if (!media) return;
 
-  // Si la imagen no carga, se elimina para no mostrar un icono roto.
-  // El evento "error" puede haber ocurrido ANTES de que se adjunte el
-  // listener (por ejemplo, un 404 resuelto muy rápido), así que también se
-  // comprueba el estado "complete" combinado con naturalWidth.
+  // Si la imagen no se puede cargar, se elimina para no mostrar un icono roto.
+  //
+  // Solo se confía en el evento "error". NO se usa
+  // "complete && naturalWidth === 0" como criterio: el navegador informa
+  // naturalWidth = 0 cuando la imagen se descargó pero aún no se decodificó
+  // (pestaña en segundo plano, iframe fuera de pantalla, carga diferida),
+  // y en ese caso se borraría una imagen perfectamente válida.
   $$('img', media).forEach((img) => {
-    const drop = () => img.remove();
-
-    if (img.complete) {
-      if (img.naturalWidth === 0) drop();
-    } else {
-      img.addEventListener('error', drop, { once: true });
-    }
+    img.addEventListener('error', () => img.remove(), { once: true });
   });
 
   // Vídeo de fondo opcional (se crea solo si hay una ruta configurada)
@@ -737,17 +734,13 @@ function initMisc() {
    ========================================================================== */
 function initAboutPhoto() {
   $$('[data-img-fallback]').forEach((img) => {
-    const mark = () => img.closest('.about__photo')?.classList.add('has-img');
-    const drop = () => img.remove();
+    const photo = img.closest('.about__photo');
 
-    if (img.complete) {
-      if (img.naturalWidth > 0) mark();
-      else drop();
-      return;
-    }
-
-    img.addEventListener('load', mark, { once: true });
-    img.addEventListener('error', drop, { once: true });
+    // El monograma "EM" se oculta únicamente cuando la imagen se cargó
+    // de verdad (evento "load"). Si falla, se retira la imagen rota y el
+    // monograma permanece como respaldo.
+    img.addEventListener('load', () => photo?.classList.add('has-img'), { once: true });
+    img.addEventListener('error', () => img.remove(), { once: true });
   });
 }
 

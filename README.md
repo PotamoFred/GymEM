@@ -157,8 +157,9 @@ Eventos actuales: `cta_hero`, `cta_about`, `plan_acondicionamiento`,
 - Un solo `request` de CSS y uno de JS (`defer`, no bloquea el renderizado).
 - Tipografía del sistema: **0 descargas** y sin salto de fuente (FOUT).
 - Íconos SVG en un *sprite* inline: **0 peticiones** de imágenes de iconos.
-- `content-visibility` y `will-change` solo donde aportan.
-- Sin vídeo ni imagen por defecto: la página pesa **~60 KB sin comprimir**.
+- Imágenes del hero en `srcset` (73 KB en móvil / 202 KB en escritorio).
+- Las animaciones usan solo `transform` y `opacity` (compuestas por la GPU).
+- Sin vídeo por defecto: la página pesa **~190 KB sin comprimir**.
 
 ### Accesibilidad
 
@@ -213,7 +214,8 @@ Cada módulo es una función aislada: si uno falla, el resto sigue funcionando
 - [ ] Sustituir nombre, teléfono, correo, ciudad y redes sociales.
 - [ ] Reemplazar los textos de ejemplo (biografía, testimonios, FAQ).
 - [ ] Ajustar los **precios en COP** a los valores reales.
-- [ ] Añadir las imágenes y convertirlas a **WebP/AVIF**.
+- [ ] Añadir `og-cover.jpg` (1200×630) y `favicon.svg`.
+- [ ] Ideal: sustituir las imágenes por versiones **WebP/AVIF** (ahorra ~40 %).
 - [ ] Configurar `formEndpoint` y probar el envío real.
 - [ ] Actualizar `canonical`, `og:image` y los datos de contacto del JSON-LD.
 - [ ] Añadir los enlaces reales de Política de privacidad y Términos.
